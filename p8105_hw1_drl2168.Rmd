@@ -96,4 +96,16 @@ for (i in 1:4) {
 
 ```
 
-The first and second variables (standard normal and logical operator) provide means of `r mean(pull(df_2,1)` and `r mean(pull(df_2,2)` respectively. The character vector and the factor vector returned errors when I tried to take the mean.
+The first and second variables (standard normal and logical operator) provide means of `r mean(pull(df_2,1))` and `r mean(pull(df_2,2))` respectively. The character vector and the factor vector returned errors when I tried to take the mean.
+
+### Coercion
+
+I will try to recode the non-numeric variables in my dataframe as numeric variables.
+
+```{r recode variables, message = FALSE, warning = FALSE}
+for (i in 2:4){
+  as.numeric(pull(df_2,i))
+}
+```
+
+The logical variable was recoded, and the factor variable was changed from "A, B, C" to "1, 2, 3", but the character variable was not recoded and displays only as "NA".
