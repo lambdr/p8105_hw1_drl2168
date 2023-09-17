@@ -76,3 +76,24 @@ ggsave(file = "EWR_temp_2013_01.png")
 The temperature at Newark Liberty Airport oscillates from day to night, and appears to be rising over the first two weeks of January 2013, before falling on the final day (January 15). The humidity tends to be low and steady for the first week, although there is some rising humidity at points of low temperature (i.e. at night). For a few days during the second week, there is high humidity consistently, and this is associated with a stabilization of the temperature.
 
 # Problem 2
+I will make a dataframe containing one numeric, one logical, one character, and one factor vector.
+
+```{r make dataframe}
+df_2 <- tibble(
+  vec_norm = rnorm(10),
+  vec_bool = (vec_norm > 0),
+  vec_char = letters[1:10],
+  vec_factor = factor(c("A","A","A","B","B","B","C","C","C","C"))
+)
+```
+
+I will now try to take the mean of each variable in the dataframe.
+
+```{r take means df}
+for (i in 1:4) {
+  print(mean(pull(df_2,i)))
+}
+
+```
+
+The first and second variables (standard normal and logical operator) provide means of `r mean(pull(df_2,1)` and `r mean(pull(df_2,2)` respectively. The character vector and the factor vector returned errors when I tried to take the mean.
