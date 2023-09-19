@@ -51,7 +51,7 @@ During the 15 days of 2013, the average temperature at Newark Liberty Airport wa
 
 I will make a plot of temperature over time using `ggplot2` and save it using `ggsave()`.
 
-```{r temp v time plot}
+```{r temp v time plot, warning = FALSE}
 # Make the plot of temp v time, and color based upon humidity
 ggplot(early_january_weather, 
        aes(x = time_hour, y = temp, color = humid)) + 
@@ -108,4 +108,4 @@ for (i in 2:4){
 }
 ```
 
-The logical variable was recoded, and the factor variable was changed from "A, B, C" to "1, 2, 3", but the character variable was not recoded and displays only as "NA". This explains why the character vector did not give a `mean()` output, but not why the factor vector did. It is possible to get a mean from that vector by first forcing it to be read as numeric.
+The logical variable was recoded, and the factor variable was changed from "A, B, C" to "1, 2, 3", but the character variable was not recoded and displays only as "NA". This explains why the character vector did not give a `mean()` output, but not why the factor vector did. It is possible to get a mean from the factor vector by first forcing it to be read as numeric.
